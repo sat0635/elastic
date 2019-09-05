@@ -6,6 +6,10 @@ from django.http import HttpResponse
 import json
 
 base_url='http://34.97.49.139:8000/'
+def clean(request, id):
+	queryset = Place.objects.get(ID=id)
+	queryset.CONTENT_DEPTH=0
+	queryset.save()
 
 def increase_depth(request,id, depth):
 	queryset = Place.objects.get(ID=id)

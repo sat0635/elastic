@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
 	path('makefile/', views.makefile),
 	path('increase_depth/<id>/<depth>/', views.increase_depth),
+	path('clean/<id>/', views.clean),
 ]
