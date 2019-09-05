@@ -105,10 +105,13 @@ export default class Hexbin extends Component {
     });
   }
   makeNewColorScale(hexagons) {
-    return scaleLinear().domain([0, max(hexagons.map(hexagon => hexagon.length))]).range(this.props.colorRange).interpolate(interpolateLab);
+    return scaleLinear().domain([0, max(hexagons.map(hexagon => 10))]).range(this.props.colorRange).interpolate(interpolateLab);
   }
   makeNewHexbinGenerator(hexPointRadius) {
     return hexbin().radius(hexPointRadius);
+  }
+  makeNewOpacity(hexagons) {
+    return  max(hexagons.map(hexagon => hexagon.value));
   }
   makeNewHexagons() {
     let hexagons;
@@ -130,12 +133,12 @@ export default class Hexbin extends Component {
 
     // calculate the hexagons
     hexagons = hexbinGenerator(this.props.data.map(this.convertLatLngToPoint));
-    return hexagons.map((hexagon, idx) => { hexagon.id = idx; return hexagon }); // in order to give unique keys
+    return hexagons.map((hexagon, idx) => { hexagon.id = idx;  return hexagon }); // in order to give unique keys
   }
   render() {
     let hexagons = [];
     let colorScale;
-
+    let opacity;
     if (this.state.currentProjection) {
       hexagons = this.makeNewHexagons();
       colorScale = this.makeNewColorScale(hexagons);

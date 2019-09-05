@@ -45,15 +45,15 @@ class App extends Component {
           }
           googleMapElement={
             <GoogleMap
-              defaultZoom={12}
+              defaultZoom={16}
               options={{ mapTypeControl: false }}
-              defaultCenter={{ lat: 37.518397, lng: 126.978886 }}
+              defaultCenter={{ lat: 37.493511, lng: 127.056478 }}
             >
               <Hexbin
                 hexPixelRadius={HEX_PIXEL_RADIUS}
                 mapPixelHeight={MAP_PIXEL_HEIGHT}
                 data={fakeStoreLatLngData}
-                colorRange={['white', 'rgb(242, 117, 165)']}
+                colorRange={['rgb(242,130,185)', 'rgb(255, 0, 0)']}
               />
               {
                 this.state.isMarkerOn ?

@@ -4,6 +4,6 @@ from . import views
 
 
 urlpatterns = [
-	path('recycle/<number>/', views.get_number),
-
+	path('makefile/', views.makefile),
+	path('increase_depth/<id>/<depth>/', views.increase_depth),
 ]

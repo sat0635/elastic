@@ -35,7 +35,7 @@ import { hexbin } from 'd3-hexbin';
 
 class Hexagon extends Component {
     handleClick = () => {
-        console.log("Click");
+    window.open("http://www.naver.net", "네이버새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
     }
 
 
@@ -43,10 +43,13 @@ class Hexagon extends Component {
     const { hexPixelRadius, fillColor, content } = this.props;
     const hexWidth = this.props.hexPixelRadius * 2 * Math.sin(Math.PI / 3);
     const hexHeight = this.props.hexPixelRadius * 2;
-
+    let value = fillColor;
+    if(content>=7){
+	value = "rgb(255,0,0)";
+    }
     return (
       <div
-        onClick = {this.handleClick}
+        //onClick = {this.handleClick}
         style={{ width: hexWidth, height: hexHeight, position: 'relative', top: - hexHeight / 2, left: - hexWidth / 2 }}
       >
         <svg
@@ -58,15 +61,15 @@ class Hexagon extends Component {
             stroke={'white'}
             strokeWidth={1}
             d={hexbin().hexagon(hexPixelRadius)}
-            fill={fillColor}
-            opacity={0.6}
+            fill={value}
+            opacity={0.7}
             transform={ `translate(${hexWidth / 2}, ${hexHeight / 2})`}
           >
           </path>
         </svg>
         <div
           style={{ color: 'red', fontSize: '1.5em', position: 'absolute', top: 0, left: 0, textAlign: 'center', width: hexWidth, height: hexHeight, zIndex: 100 }}
-          onClick={() => {}}
+          onClick={() => {console.log(fillColor)}}
         >
           <span style={{ borderRadius: '1em', backgroundColor: 'white', lineHeight: `${hexHeight}px`, padding: '.5em', opacity: 0.7 }}>{ content }</span>
         </div>
