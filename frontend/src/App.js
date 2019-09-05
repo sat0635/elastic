@@ -34,7 +34,7 @@ class App extends Component {
 	/>
           <h2
 		style={{ color: 'black' }}
-	>Plamingo Service</h2>
+	>Flamingo Service</h2>
         </div>
         <GoogleMapLoader
           query={{ libraries: 'geometry,drawing,places,visualization' }}

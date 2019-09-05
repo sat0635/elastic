@@ -35,7 +35,7 @@ import { hexbin } from 'd3-hexbin';
 
 class Hexagon extends Component {
     handleClick = () => {
-    window.open("http://www.naver.net", "네이버새창", "width=800, height=700, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
+    window.open("http://34.97.49.139:3000/", "Flamingo", "width=1200, height=1000, toolbar=no, menubar=no, scrollbars=no, resizable=yes" );  
     }
 
 
@@ -44,12 +44,14 @@ class Hexagon extends Component {
     const hexWidth = this.props.hexPixelRadius * 2 * Math.sin(Math.PI / 3);
     const hexHeight = this.props.hexPixelRadius * 2;
     let value = fillColor;
+    let Op=0.6;
     if(content>=7){
 	value = "rgb(255,0,0)";
+	Op=1;
     }
     return (
       <div
-        //onClick = {this.handleClick}
+        onClick = {this.handleClick}
         style={{ width: hexWidth, height: hexHeight, position: 'relative', top: - hexHeight / 2, left: - hexWidth / 2 }}
       >
         <svg
@@ -62,7 +64,7 @@ class Hexagon extends Component {
             strokeWidth={1}
             d={hexbin().hexagon(hexPixelRadius)}
             fill={value}
-            opacity={0.7}
+            opacity={Op}
             transform={ `translate(${hexWidth / 2}, ${hexHeight / 2})`}
           >
           </path>
