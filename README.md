@@ -46,6 +46,7 @@ def makefile(request):
 ~~~
 <hr/>
 <h3>Hexbin.js in frontend(React)</h3>
+
 ~~~
 //Hexagon.js(지도에 마크를 찍는 역할을 함)에게 해당 분쇄기 정보를 넘겨준다
 //hexagon.length == 수거함 내용물 높이
