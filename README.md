@@ -1,10 +1,14 @@
-# elastic
-<hr/>
+# elastic 
 월드 스마트시티 엑스포(WSCE 2019) 메이커톤 우수상작품, 스마트 플라스틱 분쇄기의 서버입니다.
 
+<img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/65401114-fdbe8a80-de00-11e9-91fb-171447019eca.jpg">
+</br>
+
+1. 플라스틱을 재활용하기까지는 처리장으로의 이동, 보관, 분류, 파쇄라는 복잡한 과정이 걸립니다. 그러나 플라밍고팀의 elastic(echo + plastic)분쇄기를 사용하면 분리수거함에서 미리 분류, 파쇄하고 스크랩으로 보관해놓음으로써, 적은 비용과 적은 오염걱정으로 바로 상품화할 수 있습니다.
+
+2. elastic 분쇄기가 보내는 정보를 통해 내용물이 일정 이상 차있는 곳만 수거해감으로써, 수거자가 최단거리로 수거할 수 있음 
 
 <hr/>
-
 <h3>views.py in backend(Django)</h3>
 
 ~~~
