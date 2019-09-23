@@ -1,8 +1,8 @@
 # elastic
+<hr/>
 월드 스마트시티 엑스포(WSCE 2019) 메이커톤 우수상작품, 스마트 플라스틱 분쇄기의 서버입니다.
 
 
-<img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/65400161-aa960900-ddfb-11e9-9caf-d5399d5b8241.jpg">
 <hr/>
 
 <h3>views.py in backend(Django)</h3>
@@ -60,6 +60,52 @@ def makefile(request):
 ~~~
 
 <hr/>
+<h3>App.js in frontend_chart(React)</h3>
+
+~~~
+//임의의 값으로 설정된 월별 플라스틱 오염도 생성 
+ const pollution = {
+        animationEnabled: true,
+        title:{
+                text: "월별 플라스틱 오염도"
+        },
+        axisY : {
+                title: "단위 퍼센트 (%)",
+                includeZero: false,
+                suffix: " %",
+                maximum:30
+        },
+        toolTip: {
+                shared: true
+        },
+        data: [{
+                type: "spline",
+                name: "오염도 pollution",
+                showInLegend: true,
+                dataPoints: [
+                        { y: 10, label: "Jan" },
+                        { y: 11, label: "Feb" },
+                        { y: 12, label: "Mar" },
+                        { y: 11, label: "Apr" },
+                        { y: 9, label: "May" },
+                        { y: 10, label: "Jun" },
+                        { y: 11, label: "Jul" },
+                        { y: 10, label: "Aug" },
+                        { y: 9, label: "Sept" },
+                        { y: 11, label: "Oct" },
+                        { y: 9, label: "Nov" },
+                        { y: 9, label: "Dec" }
+                ]
+        }
+        ]
+
+}
+
+~~~
+<hr/>
+
+<img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/65400161-aa960900-ddfb-11e9-9caf-d5399d5b8241.jpg">
+
 <img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/65400051-09a74e00-ddfb-11e9-86e6-25d7627b9e48.JPG">
 
 <img width="586" alt="concept2" src="https://user-images.githubusercontent.com/29095448/65400048-0613c700-ddfb-11e9-9cdd-a565855a8e0a.PNG">
